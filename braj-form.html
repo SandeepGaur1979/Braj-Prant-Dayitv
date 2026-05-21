@@ -5,97 +5,92 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ब्रज प्रान्त — दायित्व प्रपत्र</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi&display=swap');
 
   :root {
-    --saffron: #FF6B00;
-    --deep: #1a0a00;
-    --cream: #FFF8EE;
-    --gold: #C8860A;
-    --light: #FFF3E0;
-    --border: #E8C88A;
-    --text: #2D1500;
-    --muted: #8B6A3E;
-    --success: #2E7D32;
+    --saffron: #D4500A;
+    --dark: #1C1C1C;
+    --mid: #444444;
+    --light-gray: #F5F5F5;
+    --border: #CCCCCC;
+    --red: #C62828;
+    --green: #2E7D32;
+    --white: #FFFFFF;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
     font-family: 'Noto Sans Devanagari', sans-serif;
-    background: var(--cream);
-    color: var(--text);
+    background: #EFEFEF;
+    color: var(--dark);
     min-height: 100vh;
   }
 
   header {
-    background: var(--deep);
-    color: var(--cream);
-    padding: 20px 24px;
+    background: var(--dark);
+    color: white;
+    padding: 18px 24px;
     text-align: center;
-    border-bottom: 4px solid var(--saffron);
+    border-bottom: 5px solid var(--saffron);
   }
 
   header h1 {
     font-family: 'Tiro Devanagari Hindi', serif;
-    font-size: 1.6rem;
-    color: var(--saffron);
-    letter-spacing: 0.5px;
+    font-size: 1.5rem;
+    color: white;
   }
 
   header p {
-    font-size: 0.85rem;
-    color: var(--border);
-    margin-top: 4px;
+    font-size: 0.82rem;
+    color: #AAAAAA;
+    margin-top: 3px;
   }
 
   .container {
-    max-width: 680px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 24px 16px 60px;
+    padding: 20px 14px 60px;
   }
 
   .card {
-    background: white;
+    background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(200,134,10,0.08);
+    margin-bottom: 18px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
   }
 
   .card-title {
     font-size: 1rem;
     font-weight: 700;
     color: var(--saffron);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 10px;
+    border-bottom: 2px solid var(--saffron);
+    padding-bottom: 8px;
     margin-bottom: 16px;
   }
 
   label {
     display: block;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: var(--muted);
-    margin-bottom: 5px;
-    margin-top: 14px;
+    color: var(--mid);
+    margin-bottom: 4px;
+    margin-top: 12px;
   }
 
   label:first-of-type { margin-top: 0; }
 
-  select, input[type="text"], input[type="tel"] {
+  select, input[type="text"], input[type="tel"], input[type="number"] {
     width: 100%;
-    padding: 10px 12px;
+    padding: 9px 11px;
     border: 1.5px solid var(--border);
-    border-radius: 7px;
+    border-radius: 6px;
     font-family: 'Noto Sans Devanagari', sans-serif;
-    font-size: 0.92rem;
-    color: var(--text);
-    background: var(--light);
-    appearance: none;
-    -webkit-appearance: none;
-    transition: border-color 0.2s;
+    font-size: 0.9rem;
+    color: var(--dark);
+    background: var(--light-gray);
   }
 
   select:focus, input:focus {
@@ -104,38 +99,44 @@
     background: white;
   }
 
-  .select-wrap {
-    position: relative;
-  }
-
+  .select-wrap { position: relative; }
   .select-wrap::after {
     content: '▾';
     position: absolute;
-    right: 12px;
+    right: 11px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--saffron);
     pointer-events: none;
-    font-size: 1rem;
   }
 
+  .hidden { display: none; }
   .dayitva-section { display: none; }
 
   .dayitva-block {
-    background: var(--light);
+    background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-left: 4px solid var(--saffron);
+    border-radius: 6px;
     padding: 14px;
     margin-bottom: 14px;
   }
 
+  .dayitva-block.sah {
+    border-left: 4px solid #888;
+    background: var(--light-gray);
+  }
+
   .dayitva-block h3 {
-    font-size: 0.88rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 10px;
-    padding-bottom: 6px;
-    border-bottom: 1px dashed var(--border);
+    color: var(--dark);
+    margin-bottom: 12px;
+  }
+
+  .dayitva-block.sah h3 {
+    font-size: 0.95rem;
+    color: var(--mid);
   }
 
   .field-row {
@@ -146,73 +147,80 @@
 
   .field-row.full { grid-template-columns: 1fr; }
 
-  .field-group { margin-bottom: 10px; }
-  .field-group:last-child { margin-bottom: 0; }
+  .field-group { margin-bottom: 8px; }
+  .field-group label { margin-top: 0; font-size: 0.75rem; }
 
-  .field-group label {
-    font-size: 0.75rem;
-    margin-top: 0;
-    margin-bottom: 4px;
+  .status-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
   }
+
+  .status-btn {
+    padding: 6px 16px;
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    background: white;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 0.82rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.15s;
+  }
+
+  .status-btn.active-btn.selected { background: var(--green); color: white; border-color: var(--green); }
+  .status-btn.inactive-btn.selected { background: var(--red); color: white; border-color: var(--red); }
+
+  .maah-wrap { display: none; align-items: center; gap: 8px; }
+  .maah-wrap label { margin: 0; font-size: 0.78rem; white-space: nowrap; }
+  .maah-wrap input { width: 70px; }
 
   .submit-btn {
     width: 100%;
-    padding: 14px;
+    padding: 13px;
     background: var(--saffron);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 7px;
     font-family: 'Noto Sans Devanagari', sans-serif;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
-    letter-spacing: 0.5px;
-    transition: background 0.2s, transform 0.1s;
-    margin-top: 8px;
+    transition: background 0.2s;
+    margin-top: 6px;
   }
 
-  .submit-btn:hover { background: #e05a00; }
-  .submit-btn:active { transform: scale(0.99); }
-  .submit-btn:disabled { background: #ccc; cursor: not-allowed; }
-
-  .hidden { display: none; }
+  .submit-btn:hover { background: #B8400A; }
+  .submit-btn:disabled { background: #AAA; cursor: not-allowed; }
 
   .success-box {
     display: none;
     background: #E8F5E9;
-    border: 2px solid var(--success);
-    border-radius: 10px;
+    border: 2px solid var(--green);
+    border-radius: 8px;
     padding: 24px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 16px;
   }
 
-  .success-box h2 {
-    color: var(--success);
-    font-size: 1.3rem;
-    margin-bottom: 8px;
-  }
+  .success-box h2 { color: var(--green); font-size: 1.2rem; margin-bottom: 6px; }
+  .success-box p { color: #388E3C; font-size: 0.88rem; }
 
-  .success-box p {
-    color: #4CAF50;
-    font-size: 0.9rem;
-  }
+  .loading { display: none; text-align: center; padding: 10px; color: var(--mid); font-size: 0.9rem; }
+  .error-msg { display: none; color: var(--red); font-size: 0.82rem; margin-top: 6px; }
 
-  .error-msg {
-    color: #c62828;
-    font-size: 0.8rem;
-    margin-top: 4px;
-    display: none;
-  }
+  .note { font-size: 0.76rem; color: #888; margin-top: 8px; }
 
-  .note {
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-top: 8px;
-    font-style: italic;
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin: 18px 0 8px;
   }
-
-  .loading { display: none; text-align: center; padding: 10px; color: var(--muted); font-size: 0.9rem; }
 </style>
 </head>
 <body>
@@ -224,19 +232,21 @@
 
 <div class="container">
 
-  <!-- Step 1: स्तर चयन -->
   <div class="card" id="card-star">
-    <div class="card-title">📍 संगठनात्मक स्तर चुनें</div>
+    <div class="card-title">संगठनात्मक स्तर चुनें</div>
 
     <label>स्तर</label>
     <div class="select-wrap">
       <select id="sel-star" onchange="onStarChange()">
         <option value="">— स्तर चुनें —</option>
+        <option value="prant">प्रान्त</option>
         <option value="vibhag">विभाग</option>
         <option value="jila">जिला</option>
         <option value="mahanagar">महानगर</option>
       </select>
     </div>
+
+    <!-- प्रान्त — कोई sub-select नहीं -->
 
     <!-- विभाग -->
     <div id="wrap-vibhag" class="hidden">
@@ -299,18 +309,17 @@
     </div>
   </div>
 
-  <!-- Step 2: दायित्व भरें -->
+  <!-- दायित्व fields -->
   <div id="dayitva-section" class="dayitva-section">
     <div class="card">
-      <div class="card-title" id="dayitva-title">📋 दायित्वधारी कार्यकर्ता</div>
+      <div class="card-title" id="dayitva-title">दायित्ववान कार्यकर्ता</div>
       <div id="dayitva-fields"></div>
     </div>
 
     <div class="loading" id="loading-msg">⏳ डेटा भेजा जा रहा है...</div>
-    <div class="error-msg" id="error-msg">❌ कुछ गलत हुआ। कृपया पुनः प्रयास करें।</div>
-
+    <div class="error-msg" id="error-msg">❌ कुछ गलत हुआ। पुनः प्रयास करें।</div>
     <button class="submit-btn" id="submit-btn" onclick="submitForm()">✅ डेटा सुरक्षित करें</button>
-    <p class="note">* सभी खाने भरना अनिवार्य नहीं। जो जानकारी उपलब्ध हो वह भरें।</p>
+    <p class="note">* केवल उपलब्ध जानकारी भरें। सभी field अनिवार्य नहीं।</p>
   </div>
 
   <div class="success-box" id="success-box">
@@ -336,92 +345,104 @@ const jilaMap = {
   harigadh: ['हरीगढ़', 'अतरौली', 'खैर', 'हाथरस']
 };
 
-const dayitvaVibhag = [
-  { key: 'sanyojak', label: 'विभाग संयोजक' },
-  { key: 'sah1', label: 'सह विभाग संयोजक (1)' },
-  { key: 'sah2', label: 'सह विभाग संयोजक (2)' },
+const prantList = [
+  { key: 'prant_pramukh', label: 'प्रान्त प्रमुख', isMukhy: true },
+  { key: 'prant_sanyojak', label: 'प्रान्त संयोजक', isMukhy: true },
+  { key: 'sah_prant_sanyojak_1', label: 'सह प्रान्त संयोजक (1)', isMukhy: false },
+  { key: 'sah_prant_sanyojak_2', label: 'सह प्रान्त संयोजक (2)', isMukhy: false },
+  { key: 'prant_pariyojna', label: 'प्रान्त परियोजना प्रमुख', isMukhy: true },
+  { key: 'sah_prant_pariyojna_1', label: 'सह प्रान्त परियोजना प्रमुख (1)', isMukhy: false },
+  { key: 'sah_prant_pariyojna_2', label: 'सह प्रान्त परियोजना प्रमुख (2)', isMukhy: false },
+  { key: 'prant_sanskriti', label: 'प्रान्त संस्कृति प्रमुख', isMukhy: true },
+  { key: 'sah_prant_sanskriti_1', label: 'सह प्रान्त संस्कृति प्रमुख (1)', isMukhy: false },
+  { key: 'sah_prant_sanskriti_2', label: 'सह प्रान्त संस्कृति प्रमुख (2)', isMukhy: false },
+  { key: 'prant_prashashan', label: 'प्रान्त प्रशासन संपर्क प्रमुख', isMukhy: true },
+  { key: 'sah_prant_prashashan_1', label: 'सह प्रान्त प्रशासन संपर्क प्रमुख (1)', isMukhy: false },
+  { key: 'sah_prant_prashashan_2', label: 'सह प्रान्त प्रशासन संपर्क प्रमुख (2)', isMukhy: false },
+  { key: 'prant_vidhi', label: 'प्रान्त विधि प्रमुख', isMukhy: true },
+  { key: 'sah_prant_vidhi_1', label: 'सह प्रान्त विधि प्रमुख (1)', isMukhy: false },
+  { key: 'sah_prant_vidhi_2', label: 'सह प्रान्त विधि प्रमुख (2)', isMukhy: false },
+  { key: 'prant_nidhi', label: 'प्रान्त निधि प्रमुख', isMukhy: true },
+  { key: 'sah_prant_nidhi_1', label: 'सह प्रान्त निधि प्रमुख (1)', isMukhy: false },
+  { key: 'sah_prant_nidhi_2', label: 'सह प्रान्त निधि प्रमुख (2)', isMukhy: false },
 ];
 
-function getDayitvaList(star, ikaiNaam) {
+const vibhagList = [
+  { key: 'vibhag_sanyojak', label: 'विभाग संयोजक', isMukhy: true },
+  { key: 'sah_vibhag_sanyojak_1', label: 'सह विभाग संयोजक (1)', isMukhy: false },
+  { key: 'sah_vibhag_sanyojak_2', label: 'सह विभाग संयोजक (2)', isMukhy: false },
+];
+
+function getDayitvaList(star) {
   const prefix = star === 'jila' ? 'जिला' : 'महानगर';
   return [
-    { key: 'sanyojak', label: `${prefix} संयोजक` },
-    { key: 'sah_sanyojak_1', label: `सह ${prefix} संयोजक (1)` },
-    { key: 'sah_sanyojak_2', label: `सह ${prefix} संयोजक (2)` },
-    { key: 'pariyojna', label: `${prefix} परियोजना प्रमुख` },
-    { key: 'sah_pariyojna_1', label: `सह ${prefix} परियोजना प्रमुख (1)` },
-    { key: 'sah_pariyojna_2', label: `सह ${prefix} परियोजना प्रमुख (2)` },
-    { key: 'sanskriti', label: `${prefix} संस्कृति प्रमुख` },
-    { key: 'sah_sanskriti_1', label: `सह ${prefix} संस्कृति प्रमुख (1)` },
-    { key: 'sah_sanskriti_2', label: `सह ${prefix} संस्कृति प्रमुख (2)` },
-    { key: 'prashashan', label: `${prefix} प्रशासन संपर्क प्रमुख` },
-    { key: 'sah_prashashan_1', label: `सह ${prefix} प्रशासन संपर्क प्रमुख (1)` },
-    { key: 'sah_prashashan_2', label: `सह ${prefix} प्रशासन संपर्क प्रमुख (2)` },
-    { key: 'vidhi', label: `${prefix} विधि प्रमुख` },
-    { key: 'sah_vidhi_1', label: `सह ${prefix} विधि प्रमुख (1)` },
-    { key: 'sah_vidhi_2', label: `सह ${prefix} विधि प्रमुख (2)` },
-    { key: 'nidhi', label: `${prefix} निधि प्रमुख` },
-    { key: 'sah_nidhi_1', label: `सह ${prefix} निधि प्रमुख (1)` },
-    { key: 'sah_nidhi_2', label: `सह ${prefix} निधि प्रमुख (2)` },
+    { key: 'sanyojak', label: `${prefix} संयोजक`, isMukhy: true },
+    { key: 'sah_sanyojak_1', label: `सह ${prefix} संयोजक (1)`, isMukhy: false },
+    { key: 'sah_sanyojak_2', label: `सह ${prefix} संयोजक (2)`, isMukhy: false },
+    { key: 'pariyojna', label: `${prefix} परियोजना प्रमुख`, isMukhy: true },
+    { key: 'sah_pariyojna_1', label: `सह ${prefix} परियोजना प्रमुख (1)`, isMukhy: false },
+    { key: 'sah_pariyojna_2', label: `सह ${prefix} परियोजना प्रमुख (2)`, isMukhy: false },
+    { key: 'sanskriti', label: `${prefix} संस्कृति प्रमुख`, isMukhy: true },
+    { key: 'sah_sanskriti_1', label: `सह ${prefix} संस्कृति प्रमुख (1)`, isMukhy: false },
+    { key: 'sah_sanskriti_2', label: `सह ${prefix} संस्कृति प्रमुख (2)`, isMukhy: false },
+    { key: 'prashashan', label: `${prefix} प्रशासन संपर्क प्रमुख`, isMukhy: true },
+    { key: 'sah_prashashan_1', label: `सह ${prefix} प्रशासन संपर्क प्रमुख (1)`, isMukhy: false },
+    { key: 'sah_prashashan_2', label: `सह ${prefix} प्रशासन संपर्क प्रमुख (2)`, isMukhy: false },
+    { key: 'vidhi', label: `${prefix} विधि प्रमुख`, isMukhy: true },
+    { key: 'sah_vidhi_1', label: `सह ${prefix} विधि प्रमुख (1)`, isMukhy: false },
+    { key: 'sah_vidhi_2', label: `सह ${prefix} विधि प्रमुख (2)`, isMukhy: false },
+    { key: 'nidhi', label: `${prefix} निधि प्रमुख`, isMukhy: true },
+    { key: 'sah_nidhi_1', label: `सह ${prefix} निधि प्रमुख (1)`, isMukhy: false },
+    { key: 'sah_nidhi_2', label: `सह ${prefix} निधि प्रमुख (2)`, isMukhy: false },
   ];
 }
 
 function onStarChange() {
   const star = document.getElementById('sel-star').value;
-  document.getElementById('wrap-vibhag').classList.add('hidden');
-  document.getElementById('wrap-jila').classList.add('hidden');
-  document.getElementById('wrap-mahanagar').classList.add('hidden');
+  ['wrap-vibhag','wrap-jila','wrap-mahanagar'].forEach(id => document.getElementById(id).classList.add('hidden'));
   document.getElementById('dayitva-section').style.display = 'none';
 
   if (star === 'vibhag') document.getElementById('wrap-vibhag').classList.remove('hidden');
   if (star === 'jila') document.getElementById('wrap-jila').classList.remove('hidden');
   if (star === 'mahanagar') document.getElementById('wrap-mahanagar').classList.remove('hidden');
+  if (star === 'prant') onIkaiChange();
 }
 
 function onJilaVibhagChange() {
   const v = document.getElementById('sel-jila-vibhag').value;
   const sel = document.getElementById('sel-jila');
   sel.innerHTML = '<option value="">— जिला चुनें —</option>';
-  if (jilaMap[v]) {
-    jilaMap[v].forEach(j => {
-      const o = document.createElement('option');
-      o.value = j; o.text = j;
-      sel.appendChild(o);
-    });
-  }
+  if (jilaMap[v]) jilaMap[v].forEach(j => { const o = document.createElement('option'); o.value = j; o.text = j; sel.appendChild(o); });
   document.getElementById('dayitva-section').style.display = 'none';
 }
 
 function onIkaiChange() {
   const star = document.getElementById('sel-star').value;
-  let ikaiNaam = '';
-  let vibhagNaam = '';
+  let ikaiNaam = '', vibhagNaam = '';
 
-  if (star === 'vibhag') {
-    ikaiNaam = document.getElementById('sel-vibhag').value;
-    vibhagNaam = ikaiNaam;
-  } else if (star === 'jila') {
-    ikaiNaam = document.getElementById('sel-jila').value;
-    vibhagNaam = document.getElementById('sel-jila-vibhag').options[document.getElementById('sel-jila-vibhag').selectedIndex].text;
-  } else if (star === 'mahanagar') {
-    ikaiNaam = document.getElementById('sel-mahanagar').value;
-  }
+  if (star === 'prant') { ikaiNaam = 'ब्रज प्रान्त'; vibhagNaam = ''; }
+  else if (star === 'vibhag') { ikaiNaam = document.getElementById('sel-vibhag').value; vibhagNaam = ikaiNaam; }
+  else if (star === 'jila') { ikaiNaam = document.getElementById('sel-jila').value; vibhagNaam = document.getElementById('sel-jila-vibhag').options[document.getElementById('sel-jila-vibhag').selectedIndex].text; }
+  else if (star === 'mahanagar') { ikaiNaam = document.getElementById('sel-mahanagar').value; }
 
   if (!ikaiNaam) return;
 
-  const list = star === 'vibhag' ? dayitvaVibhag : getDayitvaList(star, ikaiNaam);
-  renderDayitvaFields(list, star, ikaiNaam);
+  let list;
+  if (star === 'prant') list = prantList;
+  else if (star === 'vibhag') list = vibhagList;
+  else list = getDayitvaList(star);
+
+  renderFields(list);
   document.getElementById('dayitva-section').style.display = 'block';
-  document.getElementById('dayitva-title').textContent = `📋 ${ikaiNaam} — दायित्वधारी`;
+  document.getElementById('dayitva-title').textContent = `${ikaiNaam} — दायित्ववान कार्यकर्ता`;
 }
 
-function renderDayitvaFields(list, star, ikaiNaam) {
+function renderFields(list) {
   const container = document.getElementById('dayitva-fields');
   container.innerHTML = '';
-
   list.forEach(d => {
     const block = document.createElement('div');
-    block.className = 'dayitva-block';
+    block.className = 'dayitva-block' + (d.isMukhy ? '' : ' sah');
     block.innerHTML = `
       <h3>${d.label}</h3>
       <div class="field-row">
@@ -434,16 +455,13 @@ function renderDayitvaFields(list, star, ikaiNaam) {
           <input type="tel" id="mobile_${d.key}" placeholder="10 अंक" maxlength="10">
         </div>
       </div>
-      <div class="field-row full">
-        <div class="field-group">
-          <label>पता</label>
-          <input type="text" id="pata_${d.key}" placeholder="ग्राम/मोहल्ला, तहसील">
-        </div>
-      </div>
-      <div class="field-row full">
-        <div class="field-group">
-          <label>व्यवसाय</label>
-          <input type="text" id="vyavsay_${d.key}" placeholder="व्यवसाय">
+      <div class="status-row">
+        <span style="font-size:0.8rem;font-weight:600;color:#555;">सक्रियता:</span>
+        <button type="button" class="status-btn active-btn" id="active_${d.key}" onclick="setStatus('${d.key}','active')">✅ सक्रिय</button>
+        <button type="button" class="status-btn inactive-btn" id="inactive_${d.key}" onclick="setStatus('${d.key}','inactive')">❌ निष्क्रिय</button>
+        <div class="maah-wrap" id="maah_wrap_${d.key}">
+          <label>कितने माह से:</label>
+          <input type="number" id="maah_${d.key}" min="1" max="60" placeholder="माह">
         </div>
       </div>
     `;
@@ -451,8 +469,26 @@ function renderDayitvaFields(list, star, ikaiNaam) {
   });
 }
 
+function setStatus(key, status) {
+  document.getElementById('active_' + key).classList.remove('selected');
+  document.getElementById('inactive_' + key).classList.remove('selected');
+  document.getElementById('active_' + key).dataset.val = '';
+  document.getElementById('inactive_' + key).dataset.val = '';
+
+  if (status === 'active') {
+    document.getElementById('active_' + key).classList.add('selected');
+    document.getElementById('active_' + key).dataset.val = 'active';
+    document.getElementById('maah_wrap_' + key).style.display = 'none';
+  } else {
+    document.getElementById('inactive_' + key).classList.add('selected');
+    document.getElementById('inactive_' + key).dataset.val = 'inactive';
+    document.getElementById('maah_wrap_' + key).style.display = 'flex';
+  }
+}
+
 function getIkaiNaam() {
   const star = document.getElementById('sel-star').value;
+  if (star === 'prant') return 'ब्रज प्रान्त';
   if (star === 'vibhag') return document.getElementById('sel-vibhag').value;
   if (star === 'jila') return document.getElementById('sel-jila').value;
   if (star === 'mahanagar') return document.getElementById('sel-mahanagar').value;
@@ -470,21 +506,24 @@ async function submitForm() {
   const star = document.getElementById('sel-star').value;
   const ikaiNaam = getIkaiNaam();
   const vibhagNaam = getVibhagNaam();
+  if (!star || !ikaiNaam) { alert('कृपया स्तर और इकाई चुनें।'); return; }
 
-  if (!star || !ikaiNaam) {
-    alert('कृपया स्तर और इकाई चुनें।');
-    return;
-  }
+  let list;
+  if (star === 'prant') list = prantList;
+  else if (star === 'vibhag') list = vibhagList;
+  else list = getDayitvaList(star);
 
-  const list = star === 'vibhag' ? dayitvaVibhag : getDayitvaList(star, ikaiNaam);
   const rows = [];
-
   list.forEach(d => {
     const naam = document.getElementById('naam_' + d.key)?.value.trim() || '';
     const mobile = document.getElementById('mobile_' + d.key)?.value.trim() || '';
-    const pata = document.getElementById('pata_' + d.key)?.value.trim() || '';
-    const vyavsay = document.getElementById('vyavsay_' + d.key)?.value.trim() || '';
-    rows.push({ star, vibhag: vibhagNaam, ikai: ikaiNaam, dayitva: d.label, naam, mobile, pata, vyavsay });
+    const activeBtn = document.getElementById('active_' + d.key);
+    const inactiveBtn = document.getElementById('inactive_' + d.key);
+    let sakriyta = '';
+    if (activeBtn?.classList.contains('selected')) sakriyta = 'सक्रिय';
+    if (inactiveBtn?.classList.contains('selected')) sakriyta = 'निष्क्रिय';
+    const maah = document.getElementById('maah_' + d.key)?.value.trim() || '';
+    rows.push({ star, vibhag: vibhagNaam, ikai: ikaiNaam, dayitva: d.label, isMukhy: d.isMukhy, naam, mobile, sakriyta, maah });
   });
 
   document.getElementById('submit-btn').disabled = true;
@@ -492,18 +531,15 @@ async function submitForm() {
   document.getElementById('error-msg').style.display = 'none';
 
   try {
-    const resp = await fetch(SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
+    await fetch(SCRIPT_URL, {
+      method: 'POST', mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ rows })
     });
-
     document.getElementById('loading-msg').style.display = 'none';
     document.getElementById('dayitva-section').style.display = 'none';
     document.getElementById('card-star').style.display = 'none';
     document.getElementById('success-box').style.display = 'block';
-
   } catch (err) {
     document.getElementById('loading-msg').style.display = 'none';
     document.getElementById('error-msg').style.display = 'block';
@@ -513,9 +549,7 @@ async function submitForm() {
 
 function resetForm() {
   document.getElementById('sel-star').value = '';
-  document.getElementById('wrap-vibhag').classList.add('hidden');
-  document.getElementById('wrap-jila').classList.add('hidden');
-  document.getElementById('wrap-mahanagar').classList.add('hidden');
+  ['wrap-vibhag','wrap-jila','wrap-mahanagar'].forEach(id => document.getElementById(id).classList.add('hidden'));
   document.getElementById('dayitva-section').style.display = 'none';
   document.getElementById('dayitva-fields').innerHTML = '';
   document.getElementById('success-box').style.display = 'none';
@@ -523,33 +557,20 @@ function resetForm() {
   document.getElementById('submit-btn').disabled = false;
 }
 
-// URL parameter se pre-fill
+// URL pre-fill
 window.onload = function() {
-  const params = new URLSearchParams(window.location.search);
-  const star = params.get('star');
-  const ikai = params.get('ikai');
-  const vibhag = params.get('vibhag');
-
-  if (star && ikai) {
+  const p = new URLSearchParams(window.location.search);
+  const star = p.get('star'), ikai = p.get('ikai'), vibhag = p.get('vibhag');
+  if (star) {
     document.getElementById('sel-star').value = star;
     onStarChange();
     setTimeout(() => {
-      if (star === 'vibhag') {
-        document.getElementById('sel-vibhag').value = ikai;
-      } else if (star === 'jila') {
-        if (vibhag) {
-          document.getElementById('sel-jila-vibhag').value = vibhag;
-          onJilaVibhagChange();
-          setTimeout(() => {
-            document.getElementById('sel-jila').value = ikai;
-            onIkaiChange();
-          }, 100);
-          return;
-        }
-      } else if (star === 'mahanagar') {
-        document.getElementById('sel-mahanagar').value = ikai;
-      }
-      onIkaiChange();
+      if (star === 'vibhag' && ikai) { document.getElementById('sel-vibhag').value = ikai; onIkaiChange(); }
+      else if (star === 'jila' && vibhag && ikai) {
+        document.getElementById('sel-jila-vibhag').value = vibhag;
+        onJilaVibhagChange();
+        setTimeout(() => { document.getElementById('sel-jila').value = ikai; onIkaiChange(); }, 100);
+      } else if (star === 'mahanagar' && ikai) { document.getElementById('sel-mahanagar').value = ikai; onIkaiChange(); }
     }, 100);
   }
 };
