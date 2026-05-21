@@ -445,14 +445,23 @@ function renderFields(list) {
     block.className = 'dayitva-block' + (d.isMukhy ? '' : ' sah');
     block.innerHTML = `
       <h3>${d.label}</h3>
-      <div class="field-row">
+      <div class="field-row full">
         <div class="field-group">
           <label>नाम</label>
           <input type="text" id="naam_${d.key}" placeholder="पूरा नाम">
         </div>
+      </div>
+      <div class="field-row">
         <div class="field-group">
-          <label>मोबाइल</label>
+          <label>मोबाइल नंबर</label>
           <input type="tel" id="mobile_${d.key}" placeholder="10 अंक" maxlength="10">
+        </div>
+        <div class="field-group">
+          <label>WhatsApp नंबर</label>
+          <div style="display:flex;gap:6px;align-items:center;">
+            <input type="tel" id="whatsapp_${d.key}" placeholder="10 अंक" maxlength="10" style="flex:1;">
+            <button type="button" onclick="copyMobile('${d.key}')" style="white-space:nowrap;padding:8px 8px;background:#25D366;color:white;border:none;border-radius:6px;font-size:0.7rem;cursor:pointer;font-family:inherit;font-weight:600;">Same</button>
+          </div>
         </div>
       </div>
       <div class="status-row">
@@ -467,6 +476,13 @@ function renderFields(list) {
     `;
     container.appendChild(block);
   });
+}
+
+
+function copyMobile(key) {
+  const mob = document.getElementById("mobile_" + key)?.value.trim();
+  if (mob) document.getElementById("whatsapp_" + key).value = mob;
+  else alert("पहले मोबाइल नंबर भरें।");
 }
 
 function setStatus(key, status) {
@@ -523,7 +539,8 @@ async function submitForm() {
     if (activeBtn?.classList.contains('selected')) sakriyta = 'सक्रिय';
     if (inactiveBtn?.classList.contains('selected')) sakriyta = 'निष्क्रिय';
     const maah = document.getElementById('maah_' + d.key)?.value.trim() || '';
-    rows.push({ star, vibhag: vibhagNaam, ikai: ikaiNaam, dayitva: d.label, isMukhy: d.isMukhy, naam, mobile, sakriyta, maah });
+    const whatsapp = document.getElementById('whatsapp_' + d.key)?.value.trim() || '';
+    rows.push({ star, vibhag: vibhagNaam, ikai: ikaiNaam, dayitva: d.label, isMukhy: d.isMukhy, naam, mobile, whatsapp, sakriyta, maah });
   });
 
   document.getElementById('submit-btn').disabled = true;
